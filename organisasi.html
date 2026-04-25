@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Organisasi Kelas VII E</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/organisasi.css" />
-  <link rel="stylesheet" href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap)" />
-  <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
@@ -25,8 +24,8 @@
     </div>
     <nav class="nav-menu">
       <ul>
-        <li><a href="index.html"  class="active">Home</a></li>
-        <li><a href="organisasi.html">Our Team</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="organisasi.html" class="active">Our Team</a></li>
         <li><a href="gallery.html">Activities</a></li>
         <li><a href="info.html">Information</a></li>
       </ul>
@@ -213,10 +212,21 @@
   <script>
     // ── Load murid.json dan render kartu ──
     fetch('murid.json')
-      .then(r => r.json())
+      .then(r => {
+        if (!r.ok) throw new Error('Failed to load murid.json');
+        return r.json();
+      })
       .then(data => {
-        window._siswa = data.siswa;
-        renderKartu(data.siswa);
+        const list = data.siswa || data.students || [];
+        window._siswa = list;
+        renderKartu(list);
+      })
+      .catch(error => {
+        console.error('Error loading data:', error);
+        const grid = document.getElementById('siswaGrid');
+        const count = document.getElementById('siswaCount');
+        grid.innerHTML = '<p class="no-result">Error loading data. Please check murid.json.</p>';
+        count.textContent = '';
       });
 
     function renderKartu(list) {
@@ -231,20 +241,26 @@
       }
 
       list.forEach(s => {
-        const badge = getBadgeClass(s.jabatan);
+        const jabatan = s.jabatan || s.position || 'Anggota';
+        const badge = getBadgeClass(jabatan);
+        const foto = s.foto || s.photo || 'foto/default.jpg';
+        const nama = s.name || s.nama || 'Nama Siswa';
+        const nomor = s.no != null ? String(s.no).padStart(2,'0') : '--';
+        const genderClass = s.gender === 'L' ? 'gender-l' : 'gender-p';
+        const genderLabel = s.gender === 'L' ? '♂ Laki-laki' : '♀ Perempuan';
         const card = document.createElement('div');
         card.className = 'siswa-card';
         card.innerHTML = `
           <div class="siswa-thumb">
-            <img src="${s.foto}" alt="${s.nama}"
+            <img src="${foto}" alt="${nama}"
                  onerror="this.src='foto/default.jpg'" />
-            <span class="siswa-no">${String(s.no).padStart(2,'0')}</span>
+            <span class="siswa-no">${nomor}</span>
           </div>
           <div class="siswa-body">
-            <h3 class="siswa-nama">${s.nama}</h3>
-            <span class="siswa-jabatan ${badge}">${s.jabatan}</span>
-            <span class="siswa-gender ${s.gender === 'L' ? 'gender-l' : 'gender-p'}">
-              ${s.gender === 'L' ? '♂ Laki-laki' : '♀ Perempuan'}
+            <h3 class="siswa-nama">${nama}</h3>
+            <span class="siswa-jabatan ${badge}">${jabatan}</span>
+            <span class="siswa-gender ${genderClass}">
+              ${genderLabel}
             </span>
           </div>
         `;
@@ -264,19 +280,23 @@
 
     // ── Filter / Search ──
     function applyFilter() {
+      if (!window._siswa) return;
       const q      = document.getElementById('searchInput').value.toLowerCase();
       const gender = document.getElementById('genderFilter').value;
       const hasil  = window._siswa.filter(s => {
-        const matchName   = s.nama.toLowerCase().includes(q);
+        const nama = s.name || s.nama || '';
+        const matchName   = nama.toLowerCase().includes(q);
         const matchGender = gender === 'all' || s.gender === gender;
         return matchName && matchGender;
       });
       renderKartu(hasil);
     }
 
-    document.getElementById('searchInput').addEventListener('input', applyFilter);
-    document.getElementById('genderFilter').addEventListener('change', applyFilter);
+    // Wait for DOM and data
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('searchInput').addEventListener('input', applyFilter);
+      document.getElementById('genderFilter').addEventListener('change', applyFilter);
+    });
   </script>
 
-</body>
-</html>
+  <script src="js/script.js"></script>

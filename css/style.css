@@ -1176,6 +1176,323 @@ body {
 }
 
 /* ============================================
+   ORGANISASI PAGE
+   ============================================ */
+
+.org-hero {
+    background: linear-gradient(135deg, rgba(157, 78, 221, 0.95), rgba(114, 9, 183, 0.95));
+    padding: 80px 24px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.org-hero-title {
+    font-size: clamp(2.75rem, 5vw, 4rem);
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.org-hero-sub {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 1.05rem;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.org-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+}
+
+.section-block {
+    margin-bottom: 72px;
+}
+
+.section-heading {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+.section-heading i {
+    color: var(--light-accent);
+    font-size: 1.4rem;
+}
+
+.org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.org-connector-v {
+    width: 2px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 auto;
+}
+
+.org-row {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.org-trio {
+    align-items: flex-start;
+}
+
+.org-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+}
+
+.org-branch-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 8px 14px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.org-branch-cards {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.org-card {
+    width: 180px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 22px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.org-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 245, 255, 0.35);
+}
+
+.org-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.org-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+}
+
+.org-role {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--light-accent);
+}
+
+.org-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.role-ketua { border-color: #f59e0b; }
+.role-wakil { border-color: #3b82f6; }
+.role-sekretaris { border-color: #10b981; }
+.role-bendahara { border-color: #ec4899; }
+
+.org-seksi-wrapper {
+    width: 100%;
+    margin-top: 24px;
+}
+
+.org-seksi-title {
+    display: inline-flex;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0 auto 18px;
+}
+
+.org-seksi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.seksi-item {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 20px;
+    padding: 18px;
+}
+
+.seksi-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.seksi-names {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.filter-select {
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-light);
+    min-width: 170px;
+    transition: border-color 0.2s;
+}
+
+.filter-select:focus,
+.filter-input:focus {
+    outline: none;
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 4px rgba(0, 245, 255, 0.12);
+}
+
+.siswa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.siswa-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.siswa-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+.siswa-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(157, 78, 221, 0.15));
+    overflow: hidden;
+}
+
+.siswa-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.siswa-no {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 0.72rem;
+    padding: 4px 8px;
+    border-radius: 999px;
+}
+
+.siswa-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.siswa-nama {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.siswa-jabatan {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.badge-ketua { background: #f59e0b; color: #7c2d12; }
+.badge-wakil { background: #dbeafe; color: #1d4ed8; }
+.badge-sek { background: #d1fae5; color: #065f46; }
+.badge-ben { background: #fce7f3; color: #9d174d; }
+.badge-anggota { background: #e5e7eb; color: #374151; }
+
+.siswa-gender {
+    font-size: 0.78rem;
+}
+
+.gender-l { color: #60a5fa; }
+.gender-p { color: #f472b6; }
+
+.siswa-count {
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+.no-result {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--text-muted);
+    padding: 40px 0;
+}
+
+/* ============================================
    PEOPLE PAGE STYLES
    ============================================ */
 
