@@ -49,25 +49,25 @@
   "students": [
     {
       "id": 1,
-      "name": "Nama Siswa 1",
-      "nickname": "Panggilan",
+      "name": "Irsyad Dzaky Nurghany",
+      "nickname": "Irsyad",
       "position": "Ketua Kelas",
       "pengurusGroup": "kepemimpinan",
       "image": "assets/img/students/student-1.jpg",
-      "birthDate": "15-01-2011",
-      "hobbies": "Membaca, Gaming",
+      "birthDate": "17-10-2012",
+      "hobbies": "Membaca, Ngodng",
       "message": "Terima kasih untuk kenangan indah bersama kalian",
-      "trivia": ["Paling sering terlambat", "Fans anime"]
+      "trivia": ["Paling sering terlambat", "Nerdy"]
     },
     {
       "id": 2,
-      "name": "Nama Siswa 2",
-      "nickname": "Panggilan",
+      "name": "Rasyad Gibran Anandi",
+      "nickname": "Acad",
       "position": "Wakil Ketua Kelas",
       "pengurusGroup": "kepemimpinan",
       "image": "assets/img/students/student-2.jpg",
-      "birthDate": "20-03-2011",
-      "hobbies": "Olahraga, Musik",
+      "birthDate": "19-10-2012",
+      "hobbies": "Gaming, Nonton",
       "message": "Semoga kita selalu kompak!",
       "trivia": ["Selalu tepat waktu", "Jago basket"]
     },
@@ -175,11 +175,6 @@
       { "time": "07:00 - 08:00", "subject": "Imtaq / Jumat Pagi",      "teacher": "-",           "room": "Aula" },
       { "time": "08:00 - 09:15", "subject": "PKn",                     "teacher": "Bp. Dodi",   "room": "7E" },
       { "time": "09:30 - 10:45", "subject": "Seni Budaya",             "teacher": "Ibu Leni",   "room": "7E" }
-    ],
-    "sabtu": [
-      { "time": "07:00 - 08:15", "subject": "PJOK",                    "teacher": "Bp. Agus",   "room": "Lapangan" },
-      { "time": "08:15 - 09:30", "subject": "Prakarya",                "teacher": "Ibu Neni",   "room": "7E" },
-      { "time": "09:45 - 11:00", "subject": "Bimbingan Konseling",     "teacher": "Ibu Yosi",   "room": "7E" }
     ]
   },
 
@@ -188,8 +183,7 @@
     "selasa": ["Nama Siswa D", "Nama Siswa E", "Nama Siswa F"],
     "rabu":   ["Nama Siswa G", "Nama Siswa H", "Nama Siswa I"],
     "kamis":  ["Nama Siswa J", "Nama Siswa K", "Nama Siswa L"],
-    "jumat":  ["Nama Siswa M", "Nama Siswa N"],
-    "sabtu":  ["Nama Siswa O", "Nama Siswa P", "Nama Siswa Q"]
+    "jumat":  ["Nama Siswa M", "Nama Siswa N"]
   },
 
   "mbg": [
@@ -197,8 +191,7 @@
     { "day": "Selasa", "petugas": ["Nama Siswa C", "Nama Siswa D"], "time": "11.30" },
     { "day": "Rabu",   "petugas": ["Nama Siswa E", "Nama Siswa F"], "time": "11.30" },
     { "day": "Kamis",  "petugas": ["Nama Siswa G", "Nama Siswa H"], "time": "11.30" },
-    { "day": "Jumat",  "petugas": ["Nama Siswa I", "Nama Siswa J"], "time": "11.00" },
-    { "day": "Sabtu",  "petugas": ["Nama Siswa K", "Nama Siswa L"], "time": "11.30" }
+    { "day": "Jumat",  "petugas": ["Nama Siswa I", "Nama Siswa J"], "time": "11.00" }
   ],
 
   "gallery": [
