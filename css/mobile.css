@@ -1,0 +1,671 @@
+/* ============================================================
+   mobile.css — 7E Enormous · Mobile-Friendly Overrides
+   Tambahkan file ini ke semua halaman HTML setelah style.css:
+   <link rel="stylesheet" href="css/mobile.css">
+   ============================================================ */
+
+/* ────────────────────────────────────────────
+   BASE: mencegah overflow horizontal global
+   ──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ────────────────────────────────────────────
+   TABLET (≤ 900px)
+   ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+
+  /* NAVBAR */
+  .navbar-container {
+    flex-wrap: wrap;
+    padding: 0 1rem;
+  }
+
+  .nav-menu ul {
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  /* ORG CHART: trio → stack */
+  .org-row.org-trio {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  /* Siswa grid: 3 → 2 kolom */
+  .siswa-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   MOBILE (≤ 768px) — INTI
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* ── CONTAINER ── */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* ══════════════════════════════════
+     NAVBAR — hamburger dropdown
+     ══════════════════════════════════ */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .navbar-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    flex-wrap: nowrap;
+  }
+
+  /* Sembunyikan menu di mobile secara default */
+  .nav-menu {
+    display: none;
+    width: 100%;
+    order: 3;
+  }
+
+  /* Tampilkan saat kelas "open" aktif (ditambah JS) */
+  .nav-menu.open {
+    display: block;
+  }
+
+  .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .nav-menu ul li a {
+    display: block;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+
+  /* Hamburger — tampilkan di mobile */
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    order: 2;
+    z-index: 10;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  /* Animasi X saat hamburger open */
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* ══════════════════════════════════
+     HERO
+     ══════════════════════════════════ */
+  .hero {
+    min-height: 50vh;
+  }
+
+  .hero-content {
+    min-height: 50vh;
+  }
+
+  .hero-image {
+    width: 100%;
+    object-fit: cover;
+    min-height: 50vh;
+    max-height: 60vh;
+  }
+
+  .hero-overlay {
+    padding: 1rem 1.25rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.6rem, 6vw, 2.4rem) !important;
+    line-height: 1.2;
+  }
+
+  .hero-subheadline {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem) !important;
+  }
+
+  /* ══════════════════════════════════
+     ABOUT
+     ══════════════════════════════════ */
+  .about {
+    padding: 2rem 0;
+  }
+
+  .about h2 {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+    text-align: center;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  /* ══════════════════════════════════
+     JADWAL / SCHEDULE
+     ══════════════════════════════════ */
+  .schedule {
+    padding: 2rem 0;
+  }
+
+  .schedule h2 {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+    text-align: center;
+  }
+
+  .schedule-container {
+    overflow: hidden;
+  }
+
+  /* Tabs hari — scrollable horizontal */
+  .day-tabs {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+  }
+  .day-tabs::-webkit-scrollbar { display: none; }
+
+  .day-btn {
+    flex-shrink: 0;
+    padding: 0.6rem 1.1rem;
+    font-size: 0.9rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    min-height: 44px; /* touch target */
+    cursor: pointer;
+  }
+
+  /* Tabel jadwal — horizontal scroll */
+  .schedule-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .schedule-table thead th,
+  .schedule-table tbody td {
+    padding: 0.55rem 0.75rem;
+  }
+
+  /* ══════════════════════════════════
+     CAPTAIN CARD
+     ══════════════════════════════════ */
+  .captain-card {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+
+  .captain-image {
+    width: 140px !important;
+    height: 140px !important;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .captain-info {
+    align-items: center;
+  }
+
+  .captain-info h3 {
+    font-size: 1.2rem;
+  }
+
+  /* ══════════════════════════════════
+     COUNTDOWN
+     ══════════════════════════════════ */
+  .countdown {
+    padding: 2rem 0;
+  }
+
+  .countdown h2 {
+    font-size: clamp(1.1rem, 4.5vw, 1.6rem);
+    text-align: center;
+  }
+
+  .event-cards {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .event-card {
+    width: 100%;
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .event-card h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: nowrap;
+  }
+
+  .time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+  }
+
+  .time-value {
+    font-size: clamp(1.8rem, 8vw, 2.8rem) !important;
+    line-height: 1;
+  }
+
+  .time-label {
+    font-size: 0.7rem;
+    margin-top: 0.25rem;
+  }
+
+  /* ══════════════════════════════════
+     CTA BUTTONS
+     ══════════════════════════════════ */
+  .cta {
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    padding: 0.85rem 1.5rem;
+    min-height: 48px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+  }
+
+  /* ══════════════════════════════════
+     FOOTER
+     ══════════════════════════════════ */
+  .footer {
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .footer-content {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .footer-content p {
+    font-size: 0.85rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .social-links a {
+    font-size: 1.4rem;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .visitor-counter {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  /* ══════════════════════════════════
+     ORGANISASI — ORG CHART
+     ══════════════════════════════════ */
+  .org-hero {
+    padding: 2.5rem 1rem 2rem;
+    text-align: center;
+  }
+
+  .org-hero-title {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  .org-hero-sub {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .org-main {
+    padding: 1rem;
+  }
+
+  .section-block {
+    margin-bottom: 2rem;
+  }
+
+  .section-heading {
+    font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+    margin-bottom: 1.25rem;
+  }
+
+  /* Org chart: selalu stack vertical di mobile */
+  .org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    overflow-x: hidden;
+  }
+
+  .org-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .org-row.org-trio {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .org-card {
+    width: 150px;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 12px;
+  }
+
+  .org-card img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .org-connector-v {
+    width: 2px;
+    height: 24px;
+    margin: 0 auto;
+  }
+
+  /* Branch (Sekretaris & Bendahara) */
+  .org-branch {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .org-branch-label {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .org-branch-cards {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Seksi grid: 2 kolom di mobile */
+  .org-seksi-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .org-seksi-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .org-seksi-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .seksi-item {
+    padding: 0.65rem 0.5rem;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  .seksi-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .seksi-names {
+    font-size: 0.75rem;
+  }
+
+  /* ── DAFTAR SISWA ── */
+  .filter-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .filter-input,
+  .filter-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    min-height: 48px;
+  }
+
+  /* Siswa grid: 2 kolom */
+  .siswa-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem;
+  }
+
+  .siswa-card {
+    border-radius: 12px;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .siswa-thumb {
+    position: relative;
+    width: 72px;
+    height: 72px;
+  }
+
+  .siswa-thumb img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .siswa-no {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    font-size: 0.65rem;
+    padding: 0.1rem 0.35rem;
+    border-radius: 999px;
+  }
+
+  .siswa-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    width: 100%;
+  }
+
+  .siswa-nama {
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+    word-break: break-word;
+    text-align: center;
+    margin: 0;
+  }
+
+  .siswa-jabatan,
+  .siswa-gender {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+  }
+
+  .siswa-count {
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 0.75rem;
+  }
+
+  /* ── INFO PAGE ── */
+  .info-section {
+    padding: 1.5rem 0;
+  }
+
+  .info-section h2 {
+    font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+    text-align: center;
+  }
+}
+
+/* ────────────────────────────────────────────
+   EXTRA SMALL (≤ 380px) — Samsung Galaxy A07 dll.
+   ──────────────────────────────────────────── */
+@media (max-width: 380px) {
+
+  .hero-headline {
+    font-size: 1.4rem !important;
+  }
+
+  .hero-subheadline {
+    font-size: 0.85rem !important;
+  }
+
+  /* Countdown: lebih mungil */
+  .time-value {
+    font-size: 1.6rem !important;
+  }
+
+  .time-unit {
+    min-width: 50px;
+  }
+
+  /* Siswa: 1 kolom saat sangat sempit */
+  .siswa-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.5rem;
+  }
+
+  .org-card {
+    width: 130px;
+  }
+
+  .org-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .org-seksi-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .cta-buttons .btn {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+}
