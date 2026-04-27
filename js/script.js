@@ -305,7 +305,6 @@
       <tr>
         <td>${row.day}</td>
         <td>${row.petugas.join(', ')}</td>
-        <td>${row.time}</td>
       </tr>`).join('');
   }
 

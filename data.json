@@ -243,11 +243,11 @@
   },
 
   "mbg": [
-    { "day": "Senin",  "petugas": ["Nama Siswa A", "Nama Siswa B"], "time": "11.30" },
-    { "day": "Selasa", "petugas": ["Nama Siswa C", "Nama Siswa D"], "time": "11.30" },
-    { "day": "Rabu",   "petugas": ["Nama Siswa E", "Nama Siswa F"], "time": "11.30" },
-    { "day": "Kamis",  "petugas": ["Nama Siswa G", "Nama Siswa H"], "time": "11.30" },
-    { "day": "Jumat",  "petugas": ["Nama Siswa I", "Nama Siswa J"], "time": "11.00" }
+    { "day": "Senin",  "petugas": ["Faaiz", "Fernando", "Rafha", "Azam", "Irsyad"]},
+    { "day": "Selasa", "petugas": ["Adhyas", "Sultan", "Kenzie", "Panji", "Alvin"]},
+    { "day": "Rabu",   "petugas": ["Rasyad", "Ibnu", "Rajendra", "Ryan", "Farrel"]},
+    { "day": "Kamis",  "petugas": ["Raihan", "Arfandi", "Rafka", "Althaf"]},
+    { "day": "Jumat",  "petugas": ["Raihan", "Irsyad", "Fernando", "Rajendra", "Alvin"]}
   ],
 
   "gallery": [
