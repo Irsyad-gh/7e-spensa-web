@@ -114,294 +114,336 @@
       "nama": "Abdurrahman Althaf Al Amir",
       "gender": "L",
       "foto": "assets/foto/abdurrahman.jpg",
-      "jabatan": "Anggota Pramuka"
+      "jabatan": "Anggota Pramuka",
+      "quote": ""
     },
     {
       "no": 2,
       "nama": "Aida Rahmawati",
       "gender": "P",
       "foto": "assets/foto/aida.jpg",
-      "jabatan": "Anggota Upacara"
+      "jabatan": "Anggota Upacara",
+      "quote": ""
     },
     {
       "no": 3,
       "nama": "Alika Salsabila Abdulah",
       "gender": "P",
       "foto": "assets/foto/alika.jpg",
-      "jabatan": "Anggota Olahraga"
+      "jabatan": "Anggota Olahraga",
+      "quote": ""
     },
     {
       "no": 4,
       "nama": "Alvin Alvaro",
       "gender": "L",
       "foto": "assets/foto/alvin.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": ""
     },
     {
       "no": 5,
       "nama": "Arfandi Alief Ramadhan",
       "gender": "L",
       "foto": "assets/foto/arfandi.jpg",
-      "jabatan": "Anggota Olahraga"
+      "jabatan": "Anggota Olahraga",
+      "quote": "meski waktu terus berjalan, jangan pernah berhenti untuk berusaha"
     },
     {
       "no": 6,
       "nama": "Azam Khairul Ikhwan",
       "gender": "L",
       "foto": "assets/foto/azam.jpg",
-      "jabatan": "Anggota Perpustakaan"
+      "jabatan": "Anggota Perpustakaan",
+      "quote": "terus berusaha walaupun hasilnya belum terlihat"
     },
     {
       "no": 7,
       "nama": "Azzahra Sidqia Ramadhani",
       "gender": "P",
       "foto": "assets/foto/azzahra.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": "selalu berusaha untuk menjadi lebih baik dari hari kemarin"
     },
     {
       "no": 8,
       "nama": "Cherryl Hermira Jasmine",
       "gender": "P",
       "foto": "assets/foto/cherryl.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": "jika semua bersandar pada Tuhan, maka semua akan baik-baik saja"
     },
     {
       "no": 9,
       "nama": "Cinta Tania Apriliani",
       "gender": "P",
       "foto": "assets/foto/cinta.jpg",
-      "jabatan": "Anggota Keamanan"
+      "jabatan": "Anggota Keamanan",
+      "quote": "Lakukan yang terbaik, maka hasil terbaik akan mengikuti"
     },
     {
       "no": 10,
       "nama": "Deby Adziane Janur Nasution",
       "gender": "P",
       "foto": "assets/foto/deby.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": ""
     },
     {
       "no": 11,
       "nama": "Faaiz Faizan Achmad",
       "gender": "L",
       "foto": "assets/foto/faaiz.jpg",
-      "jabatan": "Anggota Agama"
+      "jabatan": "Anggota Agama",
+      "quote": ""
     },
     {
       "no": 12,
       "nama": "Failsya Nurfajri Ramadhani",
       "gender": "P",
       "foto": "assets/foto/failsya.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": ""
     },
     {
       "no": 13,
       "nama": "Farrel Azka Raditya",
       "gender": "L",
       "foto": "assets/foto/farrel.jpg",
-      "jabatan": "Anggota Absensi"
+      "jabatan": "Anggota Absensi",
+      "quote": ""
     },
     {
       "no": 14,
       "nama": "Felicia Clarista Setiawan",
       "gender": "P",
       "foto": "assets/foto/felicia.jpg",
-      "jabatan": "Anggota Pramuka"
+      "jabatan": "Anggota Pramuka",
+      "quote": ""
     },
     {
       "no": 15,
       "nama": "Fernando Justin",
       "gender": "L",
       "foto": "assets/foto/fernando.jpg",
-      "jabatan": "Anggota Upacara"
+      "jabatan": "Anggota Upacara",
+      "quote": ""
     },
     {
       "no": 16,
       "nama": "Feysha Zaqiyatuzahra",
       "gender": "P",
       "foto": "assets/foto/feysha.jpg",
-      "jabatan": "Bendahara 1"
+      "jabatan": "Bendahara 1",
+      "quote": ""
     },
     {
       "no": 17,
       "nama": "Haura Zauzia Sonia",
       "gender": "P",
       "foto": "assets/foto/haura.jpg",
-      "jabatan": "Anggota Absensi"
+      "jabatan": "Anggota Absensi",
+      "quote": ""
     },
     {
       "no": 18,
       "nama": "Ibnu Apandi",
       "gender": "L",
       "foto": "assets/foto/ibnu.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": ""
     },
     {
       "no": 19,
       "nama": "Irsyad Dzaky Nurghany",
       "gender": "L",
       "foto": "assets/foto/irsyad.jpg",
-      "jabatan": "Ketua"
+      "jabatan": "Ketua",
+      "quote": "GIT PUSH ORIGIN MAIN --FORCE"
     },
     {
       "no": 20,
       "nama": "Jesica Claudia",
       "gender": "P",
       "foto": "assets/foto/jesica.jpg",
-      "jabatan": "Anggota Kesenian"
+      "jabatan": "Anggota Kesenian",
+      "quote": ""
     },
     {
       "no": 21,
       "nama": "Kayla Rahma Aulia",
       "gender": "P",
       "foto": "assets/foto/kayla.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": ""
     },
     {
       "no": 22,
       "nama": "Kenzie Fazril Rahardi",
       "gender": "L",
       "foto": "assets/foto/kenzie.jpg",
-      "jabatan": "Anggota Kurikulum"
+      "jabatan": "Anggota Kurikulum",
+      "quote": ""
     },
     {
       "no": 23,
       "nama": "Mikayla Akhfa Aghniyasari",
       "gender": "P",
       "foto": "assets/foto/mikayla.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": ""
     },
     {
       "no": 24,
       "nama": "Nadia Shofi Fathinah",
       "gender": "P",
       "foto": "assets/foto/nadia.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": ""
     },
     {
       "no": 25,
       "nama": "Panji Indra Liesianto",
       "gender": "L",
       "foto": "assets/foto/panji.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": ""
     },
     {
       "no": 26,
       "nama": "Putri Amira Abdurachman",
       "gender": "P",
       "foto": "assets/foto/putri.jpg",
-      "jabatan": "Sekretaris 1"
+      "jabatan": "Sekretaris 1",
+      "quote": ""
     },
     {
       "no": 27,
       "nama": "R. Adhyas Faeyza Hendra",
       "gender": "L",
       "foto": "assets/foto/adhyas.jpg",
-      "jabatan": "Sekretaris 2"
+      "jabatan": "Sekretaris 2",
+      "quote": ""
     },
     {
       "no": 28,
       "nama": "Rafha Pratama",
       "gender": "L",
       "foto": "assets/foto/rafha.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": ""
     },
     {
       "no": 29,
       "nama": "Rafka Racerio Gentara",
       "gender": "L",
       "foto": "assets/foto/rafka.jpg",
-      "jabatan": "Anggota Kesenian"
+      "jabatan": "Anggota Kesenian",
+      "quote": ""
     },
     {
       "no": 30,
       "nama": "Rahma Khosyah Fitrie",
       "gender": "P",
       "foto": "assets/foto/rahma.jpg",
-      "jabatan": "Anggota PMR"
+      "jabatan": "Anggota PMR",
+      "quote": ""
     },
     {
       "no": 31,
       "nama": "Raihan Alfarisi Alhadar",
       "gender": "L",
       "foto": "assets/foto/raihan.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": ""
     },
     {
       "no": 32,
       "nama": "Rajendra Sudama",
       "gender": "L",
       "foto": "assets/foto/rajendra.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": ""
     },
     {
       "no": 33,
       "nama": "Rasyad Gibran Anandi",
       "gender": "L",
       "foto": "assets/foto/rasyad.jpg",
-      "jabatan": "Wakil Ketua"
+      "jabatan": "Wakil Ketua",
+      "quote": "Yang penting RDR dulu wok"
     },
     {
       "no": 34,
       "nama": "RD Ligar Khalifah Ramsyah",
       "gender": "P",
       "foto": "assets/foto/ligar.jpg",
-      "jabatan": "Bendahara 2"
+      "jabatan": "Bendahara 2",
+      "quote": ""
     },
     {
       "no": 35,
       "nama": "Rizkya Naeema Aqila",
       "gender": "P",
       "foto": "assets/foto/rizkya.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": ""
     },
     {
       "no": 36,
       "nama": "Ryan Damar Mulyadi Pratama",
       "gender": "L",
       "foto": "assets/foto/ryan.jpg",
-      "jabatan": "Anggota PMR"
+      "jabatan": "Anggota PMR",
+      "quote": ""
     },
     {
       "no": 37,
       "nama": "Sakila Aleanur Maura Taufik",
       "gender": "P",
       "foto": "assets/foto/sakila.jpg",
-      "jabatan": "Anggota Kurikulum"
+      "jabatan": "Anggota Kurikulum",
+      "quote": ""
     },
     {
       "no": 38,
       "nama": "Silva Masmara",
       "gender": "P",
       "foto": "assets/foto/silva.jpg",
-      "jabatan": "Anggota Perpustakaan"
+      "jabatan": "Anggota Perpustakaan",
+      "quote": ""
     },
     {
       "no": 39,
       "nama": "Sucira Mojang Dwipa",
       "gender": "P",
       "foto": "assets/foto/sucira.jpg",
-      "jabatan": "Anggota Agama"
+      "jabatan": "Anggota Agama",
+      "quote": ""
     },
     {
       "no": 40,
       "nama": "Sultan Maolana Sidik",
       "gender": "L",
       "foto": "assets/foto/sultan.jpg",
-      "jabatan": "Anggota Keamanan"
+      "jabatan": "Anggota Keamanan",
+      "quote": ""
     },
     {
       "no": 41,
       "nama": "Syahrul Nugraha",
       "gender": "L",
       "foto": "assets/foto/syahrul.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": ""
     },
     {
       "no": 42,
       "nama": "Qibti Dhofwatul Aisy",
       "gender": "P",
       "foto": "assets/foto/qibti.jpg",
-      "jabatan": "Anggota"
+      "jabatan": "Anggota",
+      "quote": ""
     }
   ]
 }

@@ -330,6 +330,15 @@
 .gender-l { color: #2563eb; }
 .gender-p { color: #db2777; }
 
+.siswa-quote {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-muted, #6b7280);
+  font-style: italic;
+  margin: 0;
+  line-height: 1.2;
+}
+
 /* Count text */
 .siswa-count {
   text-align: center;

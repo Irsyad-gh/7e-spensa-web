@@ -256,6 +256,7 @@
         const nomor = s.no != null ? String(s.no).padStart(2,'0') : '--';
         const genderClass = s.gender === 'L' ? 'gender-l' : 'gender-p';
         const genderLabel = s.gender === 'L' ? '♂ Laki-laki' : '♀ Perempuan';
+        const quote = s.quote || '';
         // Buat elemen kartu
         const card = document.createElement('div');
         card.className = 'siswa-card';
@@ -271,6 +272,7 @@
             <span class="siswa-gender ${genderClass}">
               ${genderLabel}
             </span>
+            ${quote ? `<p class="siswa-quote">"${quote}"</p>` : ''}
           </div>
         `;
         // Tambahkan ke grid
