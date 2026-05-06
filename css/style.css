@@ -1470,6 +1470,16 @@ body {
 .gender-l { color: #60a5fa; }
 .gender-p { color: #f472b6; }
 
+.siswa-quote {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--text-muted, #6b7280);
+  font-style: italic;
+  margin: 0;
+  line-height: 1.2;
+}
+
 .siswa-count {
     color: var(--text-muted);
     text-align: center;
