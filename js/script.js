@@ -1,21 +1,22 @@
 // =============================================================
 // js/script.js — Class Website 7E Enormous
-// SINGLE SOURCE OF TRUTH: semua konten berasal dari data.json
+// SINGlLE SOURCE OF TRUTH: semua konten berasal dari data.json
 // =============================================================
 
 (async function () {
-
   // ── 1. Load data.json ─────────────────────────────────────
   let data;
   try {
-    const res = await fetch('data.json');
+    const res = await fetch("data.json");
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
   } catch (err) {
-    console.error('[7E] Gagal memuat data.json:', err);
-    document.body.insertAdjacentHTML('afterbegin',
+    console.error("[7E] Gagal memuat data.json:", err);
+    document.body.insertAdjacentHTML(
+      "afterbegin",
       '<div style="background:#f72585;color:#fff;padding:1rem;text-align:center">' +
-      '⚠️ Gagal memuat data. Pastikan file data.json ada dan website diakses lewat server (bukan file://).</div>');
+        "⚠️ Gagal memuat data. Pastikan file data.json ada dan website diakses lewat server (bukan file://).</div>",
+    );
     return;
   }
 
@@ -28,13 +29,12 @@
   initHamburger();
 
   // ── 4. Deteksi halaman & render konten spesifik ───────────
-  const page = location.pathname.split('/').pop().replace(/^$/, 'index.html');
+  const page = location.pathname.split("/").pop().replace(/^$/, "index.html");
 
-  if      (page === 'index.html'   || page === '') renderIndex(data);
-  else if (page === 'people.html')                 renderPeople(data);
-  else if (page === 'info.html')                   renderInfo(data);
-  else if (page === 'gallery.html')                renderGallery(data);
-
+  if (page === "index.html" || page === "") renderIndex(data);
+  else if (page === "people.html") renderPeople(data);
+  else if (page === "info.html") renderInfo(data);
+  else if (page === "gallery.html") renderGallery(data);
 
   // ═══════════════════════════════════════════════════════════
   //  TEMA
@@ -42,24 +42,22 @@
 
   function applyTheme(theme) {
     const r = document.documentElement;
-    r.style.setProperty('--primary',   theme.primaryColor);
-    r.style.setProperty('--secondary', theme.secondaryColor);
-    r.style.setProperty('--accent',    theme.accentColor);
-    r.style.setProperty('--cyan',      theme.cyan);
+    r.style.setProperty("--primary", theme.primaryColor);
+    r.style.setProperty("--secondary", theme.secondaryColor);
+    r.style.setProperty("--accent", theme.accentColor);
+    r.style.setProperty("--cyan", theme.cyan);
   }
-
 
   // ═══════════════════════════════════════════════════════════
   //  NAVBAR  (ada di semua halaman)
   // ═══════════════════════════════════════════════════════════
 
   function renderNavbar(data) {
-    setAttr('.logo-img',        'src', data.logo);
-    setAttr('.logo-img',        'alt', `Logo ${data.class.name}`);
-    setText('.logo-text h1',    `${data.class.name} ${data.class.subtitle}`);
-    setText('.logo-text p',     `${data.class.schoolShort} | ${data.class.year}`);
+    setAttr(".logo-img", "src", data.logo);
+    setAttr(".logo-img", "alt", `Logo ${data.class.name}`);
+    setText(".logo-text h1", `${data.class.name} ${data.class.subtitle}`);
+    setText(".logo-text p", `${data.class.schoolShort} | ${data.class.year}`);
   }
-
 
   // ═══════════════════════════════════════════════════════════
   //  FOOTER  (ada di semua halaman)
@@ -67,34 +65,41 @@
 
   function renderFooter(data) {
     const { footer } = data;
-    const copy = qs('.footer-content p');
-    if (copy) copy.innerHTML = `&copy; ${footer.copyright} Made by ${footer.team}`;
-    setAttr('.social-links a[title="Instagram"]', 'href', 'https://www.instagram.com/7.enormous?igsh=MnJkMG9lbjRobnNk');
-    setAttr('.social-links a[title="TikTok"]',    'href', 'https://www.tiktok.com/@seven.enormous');
+    const copy = qs(".footer-content p");
+    if (copy)
+      copy.innerHTML = `&copy; ${footer.copyright} Made by ${footer.team}`;
+    setAttr(
+      '.social-links a[title="Instagram"]',
+      "href",
+      "https://www.instagram.com/7.enormous?igsh=MnJkMG9lbjRobnNk",
+    );
+    setAttr(
+      '.social-links a[title="TikTok"]',
+      "href",
+      "https://www.tiktok.com/@seven.enormous",
+    );
   }
-
 
   // ═══════════════════════════════════════════════════════════
   //  HAMBURGER MENU
   // ═══════════════════════════════════════════════════════════
 
   function initHamburger() {
-    const btn  = qs('.hamburger');
-    const menu = qs('.nav-menu');
+    const btn = qs(".hamburger");
+    const menu = qs(".nav-menu");
     if (!btn || !menu) return;
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('active');
-      btn.classList.toggle('active');
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+      btn.classList.toggle("active");
     });
     // Tutup menu saat klik link
-    menu.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () => {
-        menu.classList.remove('active');
-        btn.classList.remove('active');
-      })
+    menu.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => {
+        menu.classList.remove("active");
+        btn.classList.remove("active");
+      }),
     );
   }
-
 
   // ═══════════════════════════════════════════════════════════
   //  INDEX.HTML
@@ -102,25 +107,31 @@
 
   function renderIndex(data) {
     // Hero
-    setAttr('.hero-image',      'src', data.heroImage);
-    setAttr('.hero-image',      'alt', `Foto Kelas ${data.class.name}`);
-    setText('.hero-headline',   `Welcome to the Home of Class ${data.class.name}`);
-    setText('.hero-subheadline',`Angkatan ${data.class.year} | ${data.class.school}`);
+    setAttr(".hero-image", "src", data.heroImage);
+    setAttr(".hero-image", "alt", `Foto Kelas ${data.class.name}`);
+    setText(
+      ".hero-headline",
+      `Welcome to the Home of Class ${data.class.name}`,
+    );
+    setText(
+      ".hero-subheadline",
+      `Angkatan ${data.class.year} | ${data.class.school}`,
+    );
 
     // About
-    setText('.about-text', data.aboutClass);
+    setText(".about-text", data.aboutClass);
 
     // Stats
-    setText('#total-students', data.class.totalStudents);
+    setText("#total-students", data.class.totalStudents);
 
     // Captain = guru pertama
     const captain = data.teachers[0];
     if (captain) {
-      setAttr('.captain-image', 'src', captain.image);
-      setAttr('.captain-image', 'alt', captain.name);
-      setText('.captain-info h3',    `${captain.name}, ${captain.title}`);
-      setText('.captain-title',       captain.position);
-      setText('.captain-quote',      `"${captain.quote}"`);
+      setAttr(".captain-image", "src", captain.image);
+      setAttr(".captain-image", "alt", captain.name);
+      setText(".captain-info h3", `${captain.name}, ${captain.title}`);
+      setText(".captain-title", captain.position);
+      setText(".captain-quote", `"${captain.quote}"`);
     }
 
     // Jadwal
@@ -129,30 +140,14 @@
     // Countdown — event pertama
     if (data.events.length > 0) {
       const ev = data.events[0];
-      setText('.event-card h3', ev.name);
+      setText(".event-card h3", ev.name);
       startCountdown(ev.date);
     }
   }
 
-
-  // ═══════════════════════════════════════════════════════════
-  //  PEOPLE.HTML
-  // ═══════════════════════════════════════════════════════════
-
-  function renderPeople(data) {
-    // Render informasi wali kelas
-    renderWaliKelas(data.teachers[0]);
-    // Render struktur pengurus kelas
-    renderPengurusKelas(data);
-    // Render daftar anggota kelas
-    renderAnggotaKelas(data.students);
-    // Inisialisasi modal untuk detail siswa
-    initStudentModal(data.students);
-  }
-
   function renderWaliKelas(teacher) {
     // Cari elemen container untuk wali kelas
-    const el = qs('#wali-kelas');
+    const el = qs("#wali-kelas");
     if (!el || !teacher) return;
     // Buat HTML untuk kartu wali kelas dengan gambar, info, dan sosial media
     el.innerHTML = `
@@ -175,14 +170,14 @@
 
   function renderPengurusKelas(data) {
     // Cari container untuk pengurus
-    const container = qs('#pengurus-container');
+    const container = qs("#pengurus-container");
     if (!container) return;
 
-    let html = '';
+    let html = "";
     // Loop melalui setiap grup pengurus
     for (const group of data.pengurusGroups) {
       // Filter siswa yang termasuk dalam grup ini
-      const members = data.students.filter(s => s.pengurusGroup === group.id);
+      const members = data.students.filter((s) => s.pengurusGroup === group.id);
       if (members.length === 0) continue;
 
       // Buat HTML untuk grup dengan kartu siswa
@@ -190,26 +185,27 @@
         <div class="pengurus-group">
           <h3 class="group-title">${group.title}</h3>
           <div class="students-grid">
-            ${members.map(studentCardHTML).join('')}
+            ${members.map(studentCardHTML).join("")}
           </div>
         </div>`;
     }
 
     // Set HTML atau pesan kosong
-    container.innerHTML = html || '<p class="empty">Data pengurus belum tersedia.</p>';
+    container.innerHTML =
+      html || '<p class="empty">Data pengurus belum tersedia.</p>';
   }
 
   function renderAnggotaKelas(students) {
     // Cari grid untuk anggota kelas
-    const grid = qs('#students-grid');
+    const grid = qs("#students-grid");
     if (!grid) return;
 
     // Filter siswa yang bukan pengurus
-    const anggota = students.filter(s => !s.pengurusGroup);
+    const anggota = students.filter((s) => !s.pengurusGroup);
 
     // Set HTML grid atau pesan kosong
     grid.innerHTML = anggota.length
-      ? anggota.map(studentCardHTML).join('')
+      ? anggota.map(studentCardHTML).join("")
       : '<p class="empty">Data anggota kelas belum tersedia.</p>';
   }
 
@@ -221,59 +217,60 @@
              onerror="this.src='assets/img/students/student-placeholder.jpg'">
         <div class="student-info">
           <h4>${s.name}</h4>
-          <p class="nickname">${s.nickname || ''}</p>
-          <p class="position">${s.position || ''}</p>
+          <p class="nickname">${s.nickname || ""}</p>
+          <p class="position">${s.position || ""}</p>
         </div>
       </div>`;
   }
 
   function initStudentModal(students) {
     // Cari elemen modal
-    const modal = qs('#student-modal');
+    const modal = qs("#student-modal");
     if (!modal) return;
 
     // Event listener untuk membuka modal saat klik kartu siswa
-    document.addEventListener('click', e => {
-      const card = e.target.closest('.student-card[data-id]');
+    document.addEventListener("click", (e) => {
+      const card = e.target.closest(".student-card[data-id]");
       if (card) {
         // Cari data siswa berdasarkan ID
-        const s = students.find(s => s.id == card.dataset.id);
+        const s = students.find((s) => s.id == card.dataset.id);
         if (s) openStudentModal(s, modal);
         return;
       }
       // Tutup modal jika klik di luar atau tombol close
-      if (e.target === modal || e.target.closest('.close')) {
-        modal.style.display = 'none';
+      if (e.target === modal || e.target.closest(".close")) {
+        modal.style.display = "none";
       }
     });
 
     // Tutup modal dengan tombol Escape
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') modal.style.display = 'none';
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") modal.style.display = "none";
     });
   }
 
   function openStudentModal(s, modal) {
     // Set gambar dan info dasar siswa
-    setAttr('.modal-image',      'src', s.image);
-    setAttr('.modal-image',      'alt', s.name);
-    setText('#modal-name',        s.name);
-    setText('#modal-nickname',    s.nickname || '');
-    setText('#modal-position',    s.position || '');
-    setText('#modal-ttl',         s.birthDate || '-');
-    setText('#modal-hobi',        s.hobbies || '-');
-    setText('#modal-pesan',       s.message || '-');
+    setAttr(".modal-image", "src", s.image);
+    setAttr(".modal-image", "alt", s.name);
+    setText("#modal-name", s.name);
+    setText("#modal-nickname", s.nickname || "");
+    setText("#modal-position", s.position || "");
+    setText("#modal-ttl", s.birthDate || "-");
+    setText("#modal-hobi", s.hobbies || "-");
+    setText("#modal-pesan", s.message || "-");
 
     // Set trivia list
-    const triviaList = qs('#modal-trivia-list');
+    const triviaList = qs("#modal-trivia-list");
     if (triviaList) {
-      triviaList.innerHTML = (s.trivia || []).map(t => `<li>${t}</li>`).join('');
+      triviaList.innerHTML = (s.trivia || [])
+        .map((t) => `<li>${t}</li>`)
+        .join("");
     }
 
     // Tampilkan modal
-    modal.style.display = 'flex';
+    modal.style.display = "flex";
   }
-
 
   // ═══════════════════════════════════════════════════════════
   //  INFO.HTML
@@ -287,63 +284,82 @@
   }
 
   function renderPiket(piket) {
-    const days = ['senin', 'selasa', 'rabu', 'kamis', 'jumat',];
+    const days = ["senin", "selasa", "rabu", "kamis", "jumat"];
     for (const day of days) {
       const el = qs(`#piket-${day}`);
       if (!el) continue;
       const names = piket?.[day] || [];
       el.innerHTML = names.length
-        ? names.map(n => `<div class="piket-name">${n}</div>`).join('')
+        ? names.map((n) => `<div class="piket-name">${n}</div>`).join("")
         : '<span class="empty">-</span>';
     }
   }
 
   function renderMBG(mbgData) {
-    const tbody = qs('#mbg-body');
+    const tbody = qs("#mbg-body");
     if (!tbody || !mbgData) return;
-    tbody.innerHTML = mbgData.map(row => `
+    tbody.innerHTML = mbgData
+      .map(
+        (row) => `
       <tr>
         <td>${row.day}</td>
-        <td>${row.petugas.join(', ')}</td>
-      </tr>`).join('');
+        <td>${row.petugas.join(", ")}</td>
+      </tr>`,
+      )
+      .join("");
   }
 
   function renderBirthdays(students) {
-    const grid     = qs('#birthday-grid');
-    const monthEl  = qs('#current-month');
-    const prevBtn  = qs('#prev-month');
-    const nextBtn  = qs('#next-month');
+    const grid = qs("#birthday-grid");
+    const monthEl = qs("#current-month");
+    const prevBtn = qs("#prev-month");
+    const nextBtn = qs("#next-month");
     if (!grid) return;
 
     const MONTHS = [
-      'Januari','Februari','Maret','April','Mei','Juni',
-      'Juli','Agustus','September','Oktober','November','Desember'
+      "Januari",
+      "Februari",
+      "Maret",
+      "April",
+      "Mei",
+      "Juni",
+      "Juli",
+      "Agustus",
+      "September",
+      "Oktober",
+      "November",
+      "Desember",
     ];
 
     let month = new Date().getMonth();
-    let year  = new Date().getFullYear();
+    let year = new Date().getFullYear();
 
     function show() {
       if (monthEl) monthEl.textContent = `${MONTHS[month]} ${year}`;
 
       const birthdays = students
-        .filter(s => {
+        .filter((s) => {
           if (!s.birthDate) return false;
-          const m = parseInt(s.birthDate.split('-')[1], 10);
+          const m = parseInt(s.birthDate.split("-")[1], 10);
           return m - 1 === month;
         })
         .sort((a, b) => {
-          return parseInt(a.birthDate.split('-')[0]) - parseInt(b.birthDate.split('-')[0]);
+          return (
+            parseInt(a.birthDate.split("-")[0]) -
+            parseInt(b.birthDate.split("-")[0])
+          );
         });
 
       if (birthdays.length === 0) {
-        grid.innerHTML = '<p class="no-birthday">Tidak ada ulang tahun bulan ini 🎂</p>';
+        grid.innerHTML =
+          '<p class="no-birthday">Tidak ada ulang tahun bulan ini 🎂</p>';
         return;
       }
 
-      grid.innerHTML = birthdays.map(s => {
-        const [day] = s.birthDate.split('-');
-        return `
+      grid.innerHTML = birthdays
+        .map((s) => {
+          const [day] = s.birthDate.split("-");
+          return `
           <div class="birthday-card">
             <img src="${s.image}" alt="${s.name}"
                  onerror="this.src='assets/img/students/student-placeholder.jpg'">
@@ -352,104 +368,134 @@
               <p>🎂 ${parseInt(day, 10)} ${MONTHS[month]}</p>
             </div>
           </div>`;
-      }).join('');
+        })
+        .join("");
     }
 
-    prevBtn?.addEventListener('click', () => {
-      month--; if (month < 0)  { month = 11; year--; } show();
+    prevBtn?.addEventListener("click", () => {
+      month--;
+      if (month < 0) {
+        month = 11;
+        year--;
+      }
+      show();
     });
-    nextBtn?.addEventListener('click', () => {
-      month++; if (month > 11) { month = 0;  year++; } show();
+    nextBtn?.addEventListener("click", () => {
+      month++;
+      if (month > 11) {
+        month = 0;
+        year++;
+      }
+      show();
     });
 
     show();
   }
-
 
   // ═══════════════════════════════════════════════════════════
   //  GALLERY.HTML
   // ═══════════════════════════════════════════════════════════
 
   function renderGallery(data) {
-    const grid            = qs('#gallery-grid');
-    const filterContainer = qs('#gallery-filter');
+    const grid = qs("#gallery-grid");
+    const filterContainer = qs("#gallery-filter");
     if (!grid) return;
 
     const categories = [
-      { id: 'all',           label: 'Semua' },
-      { id: 'class-meetings',label: 'Acara Kelas' },
-      { id: 'study-tour',    label: 'Study Tour' },
-      { id: 'daily-life',    label: 'Kehidupan Sehari-hari' }
+      { id: "all", label: "Semua" },
+      { id: "class-meetings", label: "Acara Kelas" },
+      { id: "study-tour", label: "Study Tour" },
+      { id: "daily-life", label: "Kehidupan Sehari-hari" },
     ];
 
     // Filter buttons
     if (filterContainer) {
-      filterContainer.innerHTML = categories.map(c =>
-        `<button class="filter-btn${c.id === 'all' ? ' active' : ''}" data-filter="${c.id}">
+      filterContainer.innerHTML = categories
+        .map(
+          (c) =>
+            `<button class="filter-btn${c.id === "all" ? " active" : ""}" data-filter="${c.id}">
           ${c.label}
-         </button>`
-      ).join('');
+         </button>`,
+        )
+        .join("");
 
-      filterContainer.addEventListener('click', e => {
-        const btn = e.target.closest('.filter-btn');
+      filterContainer.addEventListener("click", (e) => {
+        const btn = e.target.closest(".filter-btn");
         if (!btn) return;
-        filterContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+        filterContainer
+          .querySelectorAll(".filter-btn")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
         showItems(btn.dataset.filter);
       });
     }
 
     function showItems(filter) {
-      const items = filter === 'all'
-        ? data.gallery
-        : data.gallery.filter(g => g.category === filter);
+      const items =
+        filter === "all"
+          ? data.gallery
+          : data.gallery.filter((g) => g.category === filter);
 
       grid.innerHTML = items.length
-        ? items.map(item => `
+        ? items
+            .map(
+              (item) => `
             <div class="gallery-item" data-category="${item.category}">
-              <img src="${item.image}" alt="${item.title}"
+              <img
+                   src="${item.image}"
+                   alt="${item.description}"
                    loading="lazy"
-                   onerror="this.parentElement.style.display='none'">
+                   onerror="
+                    this.src='assets/img/gallery/default.jpg';
+                    this.onerror = null;
+                  "
+              >
               <div class="gallery-overlay">
                 <h4>${item.title}</h4>
                 <p>${item.description}</p>
               </div>
-            </div>`).join('')
+            </div>`,
+            )
+            .join("")
         : '<p class="empty">Belum ada foto di kategori ini.</p>';
     }
 
-    showItems('all');
+    showItems("all");
   }
-
 
   // ═══════════════════════════════════════════════════════════
   //  JADWAL PELAJARAN  (dipakai di index & info)
   // ═══════════════════════════════════════════════════════════
 
   function initScheduleTabs(schedule) {
-    const tabs  = qsa('.day-btn');
-    const tbody = qs('#schedule-body');
+    const tabs = qsa(".day-btn");
+    const tbody = qs("#schedule-body");
     if (!tabs.length || !tbody) return;
 
     function showDay(day) {
       const rows = schedule?.[day] || [];
       tbody.innerHTML = rows.length
-        ? rows.map(r => `
+        ? rows
+            .map(
+              (r) => `
             <tr>
               <td>${r.time}</td>
               <td>${r.subject}</td>
               <td>${r.teacher}</td>
               <td>${r.room}</td>
-            </tr>`).join('')
+            </tr>`,
+            )
+            .join("")
         : '<tr><td colspan="4" class="empty">Tidak ada jadwal</td></tr>';
 
-      tabs.forEach(t => t.classList.toggle('active', t.dataset.day === day));
+      tabs.forEach((t) => t.classList.toggle("active", t.dataset.day === day));
     }
 
-    tabs.forEach(tab => tab.addEventListener('click', () => showDay(tab.dataset.day)));
-    showDay(tabs[0]?.dataset.day || 'senin');
+    tabs.forEach((tab) =>
+      tab.addEventListener("click", () => showDay(tab.dataset.day)),
+    );
+    showDay(tabs[0]?.dataset.day || "senin");
   }
-
 
   // ═══════════════════════════════════════════════════════════
   //  COUNTDOWN
@@ -458,32 +504,45 @@
   function startCountdown(targetDate) {
     const target = new Date(targetDate).getTime();
 
-    const ids = { days: '#days', hours: '#hours', minutes: '#minutes', seconds: '#seconds' };
+    const ids = {
+      days: "#days",
+      hours: "#hours",
+      minutes: "#minutes",
+      seconds: "#seconds",
+    };
 
     function tick() {
       const diff = target - Date.now();
       if (diff <= 0) {
-        Object.values(ids).forEach(sel => setText(sel, '0'));
+        Object.values(ids).forEach((sel) => setText(sel, "0"));
         return;
       }
-      setText('#days',    Math.floor(diff / 86_400_000));
-      setText('#hours',   Math.floor((diff % 86_400_000) / 3_600_000));
-      setText('#minutes', Math.floor((diff % 3_600_000)  / 60_000));
-      setText('#seconds', Math.floor((diff % 60_000)     / 1_000));
+      setText("#days", Math.floor(diff / 86_400_000));
+      setText("#hours", Math.floor((diff % 86_400_000) / 3_600_000));
+      setText("#minutes", Math.floor((diff % 3_600_000) / 60_000));
+      setText("#seconds", Math.floor((diff % 60_000) / 1_000));
     }
 
     tick();
     setInterval(tick, 1000);
   }
 
-
   // ═══════════════════════════════════════════════════════════
   //  HELPER FUNCTIONS
   // ═══════════════════════════════════════════════════════════
 
-  function qs(sel)       { return document.querySelector(sel); }
-  function qsa(sel)      { return document.querySelectorAll(sel); }
-  function setText(sel, val) { const el = qs(sel); if (el) el.textContent = val; }
-  function setAttr(sel, attr, val) { const el = qs(sel); if (el) el.setAttribute(attr, val); }
-
+  function qs(sel) {
+    return document.querySelector(sel);
+  }
+  function qsa(sel) {
+    return document.querySelectorAll(sel);
+  }
+  function setText(sel, val) {
+    const el = qs(sel);
+    if (el) el.textContent = val;
+  }
+  function setAttr(sel, attr, val) {
+    const el = qs(sel);
+    if (el) el.setAttribute(attr, val);
+  }
 })();
