@@ -370,39 +370,39 @@
 
   "gallery": [
     {
-      "image": "assets/img/gallery/class-meeting-1.jpg",
-      "category": "class-meetings",
-      "title": "Lomba Antar Kelas",
-      "description": "Kompetisi Seru"
+      "image": "assets/img/gallery/fotbar.jpg",
+      "category": "foto-bersama",
+      "title": "Foto Bersama",
+      "description": "Momen Haru"
     },
     {
-      "image": "assets/img/gallery/class-meeting-2.jpg",
-      "category": "class-meetings",
-      "title": "Acara Kelas",
+      "image": "assets/img/gallery/pks2.jpg",
+      "category": "pks",
+      "title": "Persiapan PKS",
       "description": "Semangat Bersama"
     },
     {
-      "image": "assets/img/gallery/study-tour-1.jpg",
-      "category": "study-tour",
-      "title": "Kunjungan Lapangan",
-      "description": "Belajar Sambil Bertualang"
+      "image": "assets/img/gallery/pks.jpg",
+      "category": "pks",
+      "title": "Sebelum Memulai",
+      "description": "Kenangan Bersama"
     },
     {
-      "image": "assets/img/gallery/study-tour-2.jpg",
-      "category": "study-tour",
-      "title": "Perjalanan Kelas",
-      "description": "Ciptakan Kenangan"
+      "image": "assets/img/gallery/bukber.jpg",
+      "category": "bukber",
+      "title": "Buka Puasa Bersama",
+      "description": "Rayakan Kemenangan"
     },
     {
-      "image": "assets/img/gallery/daily-1.jpg",
-      "category": "daily-life",
-      "title": "Candid Kelas",
+      "image": "assets/img/gallery/outbond.jpg",
+      "category": "outbond",
+      "title": "Berbaris Sebelum Outbond",
       "description": "Momen Berharga"
     },
     {
-      "image": "assets/img/gallery/daily-2.jpg",
-      "category": "daily-life",
-      "title": "Istirahat Seru",
+      "image": "assets/img/gallery/randimg.jpg",
+      "category": "pks",
+      "title": "Dandan Sebelum PKS",
       "description": "Canda dan Tawa"
     }
   ],
